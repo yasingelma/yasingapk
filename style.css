@@ -1,40 +1,79 @@
-/* Homepage Card Improvements */
-.card { position: relative; overflow: hidden; }
-.badge-new { 
-    position: absolute; top: 10px; right: -25px; 
-    background: #ff5252; color: white; padding: 2px 30px; 
-    font-size: 0.7rem; font-weight: bold; transform: rotate(45deg); 
+:root {
+    --apk-green: #24ad60;
+    --dark-bg: #1a1a1a;
+    --white: #ffffff;
 }
-.card-meta { display: flex; justify-content: space-between; font-size: 0.75rem; color: #777; margin: 8px 0; }
-.card-rating i { color: #ffc107; }
 
-/* Download Page Stylish Header */
-.app-main-header { display: flex; gap: 20px; align-items: flex-start; margin-top: 30px; }
-.app-main-icon-box { width: 120px; height: 120px; background: white; padding: 10px; border-radius: 24px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-.main-app-img { width: 100%; height: 100%; border-radius: 18px; object-fit: cover; } /* This fixes the fit issue */
+body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f4f7f6; color: #333; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 15px; }
 
-.app-main-info h1 { margin: 0; font-size: 1.8rem; color: #333; }
-.developer-name { color: var(--apk-green); font-weight: 600; margin: 5px 0; }
-.rating-row { color: #777; font-size: 0.9rem; }
-.rating-row .stars { color: #ffc107; font-weight: bold; margin-right: 10px; }
+/* Navbar */
+.navbar { background: var(--white); padding: 10px 0; border-bottom: 2px solid var(--apk-green); position: sticky; top: 0; z-index: 1000; }
+.nav-content { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.4rem; font-weight: bold; cursor: pointer; }
+.logo span { color: var(--apk-green); }
+.nav-links { list-style: none; display: flex; gap: 15px; padding: 0; }
+.nav-links a { text-decoration: none; color: #555; font-size: 0.9rem; font-weight: 600; }
 
-/* Download Buttons & Specs */
-.main-download-btn { 
-    display: block; background: var(--apk-green); color: white; text-align: center; 
-    padding: 18px; border-radius: 10px; text-decoration: none; font-weight: 800; 
-    font-size: 1.3rem; margin: 30px 0; box-shadow: 0 4px 15px rgba(36, 173, 96, 0.3);
+/* Hero Section */
+.hero {
+    position: relative;
+    background: #2c3e50; /* Fallback color */
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1000&q=80');
+    background-size: cover;
+    background-position: center;
+    padding: 60px 0;
+    text-align: center;
+    color: white;
 }
-.main-download-btn span { font-size: 0.9rem; font-weight: 400; opacity: 0.9; }
+.hero h1 { margin: 0; font-size: 2rem; }
+.hero-search { max-width: 500px; margin: 20px auto 0; position: relative; }
+.hero-search input { width: 100%; padding: 12px 20px; border-radius: 25px; border: none; outline: none; }
+.hero-search i { position: absolute; right: 15px; top: 50%; transform: translateY(-50%); color: #888; }
 
-.specs-grid { 
-    display: grid; grid-template-columns: 1fr 1fr; gap: 10px; 
-    background: #eee; padding: 15px; border-radius: 10px; font-size: 0.85rem;
+/* The Grid - This fixes your huge icons */
+.grid-container { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
+    gap: 20px; 
+    margin: 30px 0; 
 }
-.description-box { margin-top: 40px; line-height: 1.8; color: #444; }
-.description-box h2 { border-left: 5px solid var(--apk-green); padding-left: 15px; margin-bottom: 15px; }
 
-/* Responsive Grid for mobile */
-@media (max-width: 600px) {
-    .app-main-header { flex-direction: column; align-items: center; text-align: center; }
-    .specs-grid { grid-template-columns: 1fr; }
+.card { 
+    background: white; 
+    padding: 15px; 
+    border-radius: 12px; 
+    text-align: center; 
+    position: relative; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    overflow: hidden;
 }
+
+/* CRITICAL: Fixes the giant image in your screenshot */
+.card-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 10px;
+}
+.app-icon { 
+    width: 100%; 
+    height: 100%; 
+    border-radius: 18px; 
+    object-fit: cover; 
+}
+
+.app-name { font-size: 0.9rem; margin: 5px 0; color: #333; }
+.card-meta { display: flex; justify-content: space-between; font-size: 0.7rem; color: #888; margin-bottom: 10px; }
+.btn-dl { display: block; background: var(--apk-green); color: white; padding: 8px; border-radius: 6px; text-decoration: none; font-size: 0.8rem; font-weight: bold; }
+
+/* Badge */
+.badge-new {
+    position: absolute; top: 5px; right: -20px;
+    background: #ff5252; color: white; font-size: 0.6rem;
+    padding: 2px 20px; transform: rotate(45deg);
+}
+
+/* Footer */
+.main-footer { background: #222; color: #bbb; padding: 40px 0 20px; margin-top: 40px; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+.footer-bottom { text-align: center; border-top: 1px solid #333; margin-top: 20px; padding-top: 20px; font-size: 0.8rem; }
