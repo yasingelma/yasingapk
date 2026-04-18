@@ -3,13 +3,18 @@ function displayApps(apps) {
     appContainer.innerHTML = '';
     
     apps.forEach(app => {
+        const appSlug = encodeURIComponent(app.name.trim());
         const card = `
             <div class="card">
-                <a href="download.html?id=${app.id}" style="text-decoration:none; color:inherit;">
-                    <img src="${app.icon_url}" class="app-icon">
-                    <h3>${app.name}</h3>
-                    <p>${app.category}</p>
-                    <span class="btn-dl">Details</span>
+                <span class="badge-new">New</span>
+                <a href="download.html?name=${appSlug}" style="text-decoration:none; color:inherit;">
+                    <img src="${app.icon_url}" class="app-icon" alt="${app.name}">
+                    <h3 class="app-name">${app.name}</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa fa-star"></i> 4.8</span>
+                        <span class="card-size">${app.size || 'Varies'}</span>
+                    </div>
+                    <span class="btn-dl">Download</span>
                 </a>
             </div>
         `;
