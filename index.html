@@ -3,34 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ethio APK Hub</title>
+    <title>Ethio APK Hub | Download Android Apps</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>:root {
+    --primary: #1a73e8;       /* Tech Blue */
+    --secondary: #004d40;     /* Deep Teal */
+    --accent: #ff9800;        /* Warning/Hot Orange */
+    --bg-light: #f8f9fa;
+    --white: #ffffff;
+    --text-main: #202124;
+    --text-muted: #5f6368;
+    --shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Roboto, sans-serif; background: var(--bg-light); color: var(--text-main); line-height: 1.6; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* Navigation */
+.navbar { background: var(--white); padding: 1rem 0; box-shadow: var(--shadow); position: sticky; top: 0; z-index: 100; }
+.nav-content { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.5rem; font-weight: 800; color: var(--secondary); display: flex; align-items: center; gap: 8px; }
+.logo span { color: var(--primary); }
+.nav-links { display: flex; list-style: none; gap: 20px; }
+.nav-links a { text-decoration: none; color: var(--text-muted); font-weight: 500; transition: 0.3s; }
+.nav-links a:hover, .nav-links a.active { color: var(--primary); }
+
+.search-bar { background: #eee; padding: 5px 15px; border-radius: 25px; display: flex; align-items: center; }
+.search-bar input { border: none; background: transparent; padding: 8px; outline: none; width: 150px; }
+.search-bar button { border: none; background: transparent; cursor: pointer; color: var(--text-muted); }
+
+/* Hero */
+.hero { background: linear-gradient(135deg, var(--secondary), var(--primary)); color: white; padding: 60px 0; text-align: center; }
+.hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
+.hero p { opacity: 0.9; font-size: 1.1rem; }
+
+/* App Grid & Cards */
+.section-header { display: flex; justify-content: space-between; align-items: center; margin: 40px 0 20px; }
+.grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; padding-bottom: 50px; }
+
+.card { background: var(--white); border-radius: 15px; padding: 25px; text-align: center; box-shadow: var(--shadow); transition: 0.3s; border: 1px solid #eee; }
+.card:hover { transform: translateY(-8px); border-color: var(--primary); }
+.app-icon { width: 80px; height: 80px; background: #f0f0f0; border-radius: 18px; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: var(--primary); }
+.card h3 { margin-bottom: 10px; font-size: 1.25rem; }
+.card p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; height: 40px; overflow: hidden; }
+
+.btn-download { background: var(--primary); color: white; text-decoration: none; padding: 12px 25px; border-radius: 8px; display: inline-block; font-weight: bold; width: 100%; transition: 0.3s; }
+.btn-download:hover { background: var(--secondary); box-shadow: 0 4px 10px rgba(26, 115, 232, 0.3); }
+
+/* Footer */
+footer { background: #1a1a1b; color: #e8eaed; padding: 60px 0 20px; margin-top: 50px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 50px; }
+.footer-info h3 { margin-bottom: 15px; color: var(--white); }
+.footer-links h4 { color: var(--white); margin-bottom: 15px; }
+.footer-links ul { list-style: none; }
+.footer-links a { color: #bdc1c6; text-decoration: none; line-height: 2.2; font-size: 0.9rem; transition: 0.3s; }
+.footer-links a:hover { color: var(--primary); }
+.socials { margin-top: 20px; display: flex; gap: 15px; }
+.socials a { font-size: 1.5rem; color: white; }
+.footer-bottom { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #3c4043; font-size: 0.85rem; color: #9aa0a6; }
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .nav-links, .search-bar { display: none; }
+    .footer-grid { grid-template-columns: 1fr; text-align: center; }
+    .socials { justify-content: center; }
+}
+</style>
 </head>
 <body>
-    <header>
-        <h1>Ethiopian APK Sharing</h1>
-        <input type="text" id="search" placeholder="Search for an app...">
+
+    <nav class="navbar">
+        <div class="container nav-content">
+            <div class="logo">
+                <i class="fa-solid fa-layer-group"></i> 
+                Ethio<span>APK</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">New Apps</a></li>
+                <li><a href="#">Top Games</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="text" id="search" placeholder="Search apps...">
+                <button><i class="fa fa-search"></i></button>
+            </div>
+        </div>
+    </nav>
+    <header class="hero">
+        <div class="container">
+            <h1>Safe & Fast APK Downloads</h1>
+            <p>Access 100+ verified Android applications for Ethiopia.</p>
+        </div>
     </header>
 
-    <div id="app-container" class="grid-container">
+    <main class="container">
+        <div class="section-header">
+            <h2><i class="fa fa-fire text-orange"></i> Featured Applications</h2>
+            <div class="filters">
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">Games</button>
+                <button class="filter-btn">Tools</button>
+            </div>
         </div>
 
-    <script>
-        // Fetch your list of 100 apps
-        fetch('apps.json')
-            .then(response => response.json())
-            .then(data => {
-                const container = document.getElementById('app-container');
-                data.forEach(app => {
-                    const card = `
-                        <div class="card">
-                            <h3>${app.name}</h3>
-                            <p>${app.description}</p>
-                            <a href="${app.download_url}" class="btn">Download v${app.version}</a>
-                        </div>`;
-                    container.innerHTML += card;
-                });
-            });
-    </script>
+        <div id="app-container" class="grid-container">
+            </div>
+    </main>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-info">
+                <h3>Ethio APK Hub</h3>
+                <p>The leading platform for localized Android content in Ethiopia. Safe, fast, and free.</p>
+                <div class="socials">
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="#">Education</a></li>
+                    <li><a href="#">Social Media</a></li>
+                    <li><a href="#">Banking Apps</a></li>
+                    <li><a href="#">Entertainment</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">DMCA Takedown</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Ethio APK Hub. Designed for the Ethiopian Community.</p>
+        </div>
+    </footer>
+
+    <script src="document.addEventListener('DOMContentLoaded', () => {
+    const appContainer = document.getElementById('app-container');
+    const searchInput = document.getElementById('search');
+
+    let allApps = [];
+
+    // 1. Fetch data from your JSON file
+    fetch('apps.json')
+        .then(response => response.json())
+        .then(data => {
+            allApps = data;
+            displayApps(allApps);
+        })
+        .catch(err => console.error("Error loading apps:", err));
+
+    // 2. Function to render apps to the HTML
+    function displayApps(apps) {
+        appContainer.innerHTML = ''; // Clear container
+        
+        if(apps.length === 0) {
+            appContainer.innerHTML = '<p style="grid-column: 1/-1; text-align: center;">No apps found matching your search.</p>';
+            return;
+        }
+
+        apps.forEach(app => {
+            const card = `
+                <div class="card">
+                    <div class="app-icon">
+                        <i class="fa fa-android"></i>
+                    </div>
+                    <h3>${app.name}</h3>
+                    <p>${app.description}</p>
+                    <a href="${app.download_url}" class="btn-download">
+                        <i class="fa fa-download"></i> Download v${app.version}
+                    </a>
+                </div>
+            `;
+            appContainer.innerHTML += card;
+        });
+    }
+
+    // 3. Search Functionality
+    searchInput.addEventListener('input', (e) => {
+        const term = e.target.value.toLowerCase();
+        const filtered = allApps.filter(app => 
+            app.name.toLowerCase().includes(term) || 
+            app.description.toLowerCase().includes(term)
+        );
+        displayApps(filtered);
+    });
+});
+"></script>
+    
 </body>
 </html>
