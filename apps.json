@@ -2,31 +2,35 @@
    {
       "name":"CBE Birr",
       "category":"Finance",
-      "icon_url":"https://via.placeholder.com/72?text=CBE",
-      "download_url":"#"
+      "icon_url":"https://yasing.com.et/EthioApk%20icon.jpg",
+      "download_url":"#",
+      "version": "1.4",
+      "description": "The safest way to manage your Commercial Bank of Ethiopia account."
    },
    {
       "name":"Telebirr",
       "category":"Finance",
       "icon_url":"https://yasing.com.et/EthioApk%20icon.jpg",
-      "download_url":"#"
+      "download_url":"#",
+      "version": "2.1",
+      "description": "Ethio Telecom's mobile money service for easy payments."
    },
    {
-      "name":"Instagram",
-      "category":"Social",
+      "name":"CBE Birr",
+      "category":"Finance",
       "icon_url":"https://yasing.com.et/EthioApk%20icon.jpg",
-      "download_url":"#"
+      "download_url":"#",
+      "version": "1.4",
+      "description": "The safest way to manage your Commercial Bank of Ethiopia account."
    },
    {
-      "name":"SnapChat",
-      "category":"Social",
+      "name":"Telebirr",
+      "category":"Finance",
       "icon_url":"https://yasing.com.et/EthioApk%20icon.jpg",
-      "download_url":"#"
-   },
-   {
-      "name":"Facebook",
-      "category":"Social",
-      "icon_url":"https://yasing.com.et/EthioApk%20icon.jpg",
-      "download_url":"#"
+      "download_url":"#",
+      "version": "2.1",
+      "description": "Ethio Telecom's mobile money service for easy payments."
    }
+
 ]
+
