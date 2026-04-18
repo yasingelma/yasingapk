@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethio APK Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Ethiopian APK Sharing</h1>
+        <input type="text" id="search" placeholder="Search for an app...">
+    </header>
+
+    <div id="app-container" class="grid-container">
+        </div>
+
+    <script>
+        // Fetch your list of 100 apps
+        fetch('apps.json')
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('app-container');
+                data.forEach(app => {
+                    const card = `
+                        <div class="card">
+                            <h3>${app.name}</h3>
+                            <p>${app.description}</p>
+                            <a href="${app.download_url}" class="btn">Download v${app.version}</a>
+                        </div>`;
+                    container.innerHTML += card;
+                });
+            });
+    </script>
+</body>
+</html>
