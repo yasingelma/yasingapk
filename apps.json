@@ -2,19 +2,38 @@
    {
       "name":"CBE Birr",
       "category":"Finance",
-      "icon_url":"https://via.placeholder.com/72?text=CBE",
+      "icon_url":"https://github.com/yasingelma/yasingapk/blob/main/EthioApk%20icon.jpg",
       "download_url":"#"
    },
    {
       "name":"Telebirr",
       "category":"Finance",
-      "icon_url":"https://via.placeholder.com/72?text=Tele",
+      "icon_url":"https://github.com/yasingelma/yasingapk/blob/main/EthioApk%20icon.jpg",
       "download_url":"#"
    },
    {
       "name":"TikTok",
       "category":"Social",
-      "icon_url":"https://via.placeholder.com/72?text=TikTok",
+      "icon_url":"https://github.com/yasingelma/yasingapk/blob/main/EthioApk%20icon.jpg",
+      "download_url":"#"
+   }
+
+ {
+      "name":"CBE Birr",
+      "category":"Finance",
+      "icon_url":"https://github.com/yasingelma/yasingapk/blob/main/EthioApk%20icon.jpg",
+      "download_url":"#"
+   },
+   {
+      "name":"Telebirr",
+      "category":"Finance",
+      "icon_url":"https://github.com/yasingelma/yasingapk/blob/main/EthioApk%20icon.jpg",
+      "download_url":"#"
+   },
+   {
+      "name":"TikTok",
+      "category":"Social",
+      "icon_url":"https://github.com/yasingelma/yasingapk/blob/main/EthioApk%20icon.jpg",
       "download_url":"#"
    }
 ]
