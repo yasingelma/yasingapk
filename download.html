@@ -3,49 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download App - Ethio APK</title>
+    <title>Download - Ethio APK</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
+<body class="bg-light">
+
     <nav class="navbar">
-        <div class="container"><div class="logo">Ethio<span>APK</span></div></div>
+        <div class="container nav-content">
+            <div class="logo" onclick="window.location.href='index.html'">Ethio<span>APK</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#apps">Apps</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <div class="container download-page">
-        <div id="app-details" class="app-info-card">
-            <p>Loading app details...</p>
+    <main class="container page-wrapper">
+        <div id="app-details">
+            </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>Ethio APK Hub</h4>
+                <p>Safe and verified Android apps for Ethiopia.</p>
+            </div>
         </div>
-    </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Ethio APK Hub</p>
+        </div>
+    </footer>
 
     <script>
         const params = new URLSearchParams(window.location.search);
-        const appId = params.get('id');
+        const appName = params.get('name');
 
         fetch('apps.json')
             .then(res => res.json())
             .then(data => {
-                const app = data.find(a => a.id == appId);
+                const app = data.find(a => a.name === appName);
                 if (app) {
-                    document.title = `Download ${app.name} - Ethio APK`;
                     document.getElementById('app-details').innerHTML = `
-                        <div class="detail-header">
-                            <img src="${app.icon_url}" class="detail-icon">
-                            <div class="detail-text">
+                        <div class="app-main-header">
+                            <div class="app-main-icon-box">
+                                <img src="${app.icon_url}" class="main-app-img">
+                            </div>
+                            <div class="app-main-info">
                                 <h1>${app.name}</h1>
-                                <p class="category">${app.category}</p>
-                                <div class="rating">
-                                    <i class="fa fa-star"></i> 4.8 | <span>Verified Safe</span>
+                                <p class="developer-name">Official ${app.category} App</p>
+                                <div class="rating-row">
+                                    <span class="stars"><i class="fa fa-star"></i> 4.9</span>
+                                    <span class="reviews">1,200+ Reviews</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="description">
-                            <h3>About this app</h3>
-                            <p>${app.description || 'No description available for this version.'}</p>
+
+                        <div class="download-section">
+                            <a href="${app.download_url}" class="main-download-btn">
+                                <i class="fa fa-download"></i> Download APK <span>(${app.size || 'Unknown Size'})</span>
+                            </a>
                         </div>
-                        <a href="${app.download_url}" class="download-btn-large">
-                            <i class="fa fa-download"></i> Download APK (v${app.version})
-                        </a>
+
+                        <div class="specs-grid">
+                            <div class="spec-item"><strong>Latest Version:</strong> ${app.version}</div>
+                            <div class="spec-item"><strong>Publish Date:</strong> 2026-04-18</div>
+                            <div class="spec-item"><strong>Requirements:</strong> Android 5.0+</div>
+                            <div class="spec-item"><strong>Category:</strong> ${app.category}</div>
+                        </div>
+
+                        <div class="description-box">
+                            <h2>About ${app.name}</h2>
+                            <p>${app.description}</p>
+                        </div>
                     `;
                 }
             });
