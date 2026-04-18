@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ethio APK Hub</title>
+    <title>Ethio Apps | Ethiopian Android Apps</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -11,60 +11,72 @@
 
     <nav class="navbar">
         <div class="container nav-content">
-            <div class="logo-area" onclick="window.location.href='index.html'">
-                <img src="https://yasing.com.et/EthioApk%20icon.jpg" alt="Logo" class="site-logo">
-                <div class="logo">Ethio<span>APK</span></div>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">Categories <i class="fa fa-caret-down"></i></a>
-                    <div class="dropdown-content">
-                        <a href="#">Games</a>
-                        <a href="#">Finance</a>
-                        <a href="#">Social</a>
-                        <a href="#">Tools</a>
-                    </div>
-                </li>
-                <li><a href="#footer">Contact</a></li>
+            <a href="index.html" class="logo-area">
+                <img src="https://yasing.com.et/EthioApk%20icon.jpg" class="site-logo">
+                <div class="logo-text">Ethio<span>Apps</span></div>
+            </a>
+            <ul class="footer-links" style="display:flex; gap:20px; list-style:none;">
+                <li><a href="index.html" style="font-weight:bold; color:var(--primary)"><i class="fa fa-play"></i> Apps</a></li>
+                <li><a href="#app-container" style="font-weight:bold"><i class="fa fa-car"></i> Game</a></li>
             </ul>
         </div>
     </nav>
 
     <header class="hero">
-        <div class="container hero-content">
-            <h1>Safe & Fast APKs</h1>
-            <div class="hero-search">
-                <input type="text" id="search" placeholder="Search apps...">
-                <i class="fa fa-search"></i>
+        <div class="container">
+            <h1>Ethiopian Android Apps & Games</h1>
+            <div class="hero-search-container">
+                <input type="text" id="search" placeholder="Search apps, games, tools...">
             </div>
         </div>
     </header>
 
     <main class="container">
-        <div class="ad-banner">
-            <p>ADVERTISEMENT</p>
-            <div class="ad-placeholder">Your Ad Here</div>
-        </div>
-
-        <div class="section-title"><h2>Trending Applications</h2></div>
-        <div id="app-container" class="grid-container"></div>
+        <div id="app-container">
+            </div>
     </main>
-
-    <footer class="main-footer" id="footer">
-        <div class="container footer-grid">
-            <div class="footer-col">
-                <h4>Ethio APK Hub</h4>
-                <p>Localized Android content for Ethiopia.</p>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-telegram"></i></a>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                </div>
+<footer class="main-footer">
+    <div class="container footer-content">
+        <div class="footer-col">
+            <div class="logo-area" style="margin-bottom: 15px;">
+                <img src="https://yasing.com.et/EthioApk%20icon.jpg" style="width:30px; border-radius:5px;">
+                <span style="font-weight:800; color:#fff; font-size:1.3rem;"> Ethio<span style="color:#ff7e00">APK</span></span>
+            </div>
+            <p style="font-size: 0.9rem;">The leading independent app store for Ethiopia. Download safe, verified, and high-speed APKs for all your Android devices                 </p>
+            <div class="social-group" style="display: flex; gap: 15px; margin-top: 15px;">
+                <a href="#" style="color:white;"><i class="fab fa-telegram-plane"></i></a>
+                <a href="#" style="color:blue;"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" style="color:black;"><i class="fab fa-tiktok"></i></a>
             </div>
         </div>
-        <div class="footer-bottom"><p>&copy; 2026 Ethio APK Hub</p></div>
-    </footer>
+
+        <div class="footer-link-grid">
+            <div class="footer-col">
+                <h4>Google Play</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Desclaimer</a></li>
+                    <li><a href="#">Android Policy</a></li>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Privacy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>About</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Authors</a></li>
+                    <li><a href="#">Your Apps</a></li>
+                    <li><a href="#">Faq's</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container footer-copyright">
+        <p>Ethio Apps &copy;2026. All Rights Reserved.</p>
+    </div>
+</footer>
+
 
     <script src="script.js"></script>
 </body>
