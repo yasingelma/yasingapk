@@ -1,14 +1,20 @@
 [
-  {
-    "name": "Ethiopian Calendar",
-    "version": "1.2.0",
-    "description": "The best calendar app for Ethiopia.",
-    "download_url": "https://github.com/USER/REPO/releases/download/v1/calendar.apk"
-  },
-  {
-    "name": "Amharic Keyboard",
-    "version": "2.0.1",
-    "description": "Fast Geez typing.",
-    "download_url": "https://github.com/USER/REPO/releases/download/v1/keyboard.apk"
-  }
+    {
+        "name": "Ethio Telecom App",
+        "description": "Manage your balance, buy data packages and more.",
+        "version": "2.4.1",
+        "download_url": "#"
+    },
+    {
+        "name": "CBE Birr",
+        "description": "The official mobile banking app for Commercial Bank of Ethiopia.",
+        "version": "1.0.5",
+        "download_url": "#"
+    },
+    {
+        "name": "ZayRide",
+        "description": "Fast and reliable taxi hailing app in Addis Ababa.",
+        "version": "3.2.0",
+        "download_url": "#"
+    }
 ]
