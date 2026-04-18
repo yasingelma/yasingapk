@@ -1,20 +1,6 @@
-[
-    {
-        "name": "Ethio Telecom App",
-        "description": "Manage your balance, buy data packages and more.",
-        "version": "2.4.1",
-        "download_url": "#"
-    },
-    {
-        "name": "CBE Birr",
-        "description": "The official mobile banking app for Commercial Bank of Ethiopia.",
-        "version": "1.0.5",
-        "download_url": "#"
-    },
-    {
-        "name": "ZayRide",
-        "description": "Fast and reliable taxi hailing app in Addis Ababa.",
-        "version": "3.2.0",
-        "download_url": "#"
-    }
-]
+{
+  "name": "Facebook Lite",
+  "description": "Save data while chatting with your friends",
+  "version": "5.44",
+  "download_url": "/facebook"
+}
