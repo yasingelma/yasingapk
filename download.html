@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download App</title>
+    <title>Download Apps| Ethio Apps</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -11,83 +11,113 @@
 
     <nav class="navbar">
         <div class="container nav-content">
-            <div class="logo-area" onclick="window.location.href='index.html'">
-                <img src="https://yasing.com.et/EthioApk%20icon.jpg" alt="Logo" class="site-logo">
-                <div class="logo">Ethio<span>APK</span></div>
-            </div>
-            <div class="header-search-small">
-                <input type="text" id="dl-page-search" placeholder="Search...">
-            </div>
+            <a href="index.html" class="logo-area">
+                <img src="https://yasing.com.et/EthioApk%20icon.jpg" class="site-logo">
+                <div class="logo-text">Ethio<span>Apps</span></div>
+            </a>
+            <div class="header-search">
+    <input type="text" id="dl-page-search" placeholder="Search apps...">
+    <button type="button" class="search-submit-btn" onclick="executeSearch()">
+        <i class="fa fa-search"></i>
+    </button>
+</div>
+
         </div>
     </nav>
 
-    <main class="container page-wrapper">
-        <div id="app-details" class="dl-layout">
+    <main class="container">
+        <div class="ad-space" style="margin:20px 0; height:90px;">ADS</div>
+
+        <div id="app-content" class="app-detail-grid">
             </div>
 
-        <div class="ad-banner-square">
-            <p>ADVERTISEMENT</p>
-            <div class="ad-placeholder-sq">Ad Banner</div>
+        <div class="ad-space" style="margin:40px 0; height:150px; background:#f0f0f0;">ads</div>
+
+        <div style="margin-top:40px;">
+            <h3 class="section-title">Similar Apps</h3>
+            <div id="related-apps" class="grid-container"></div>
         </div>
     </main>
-
-    <footer class="main-footer">
-        <div class="container footer-grid">
-            <div class="footer-col">
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-telegram"></i></a>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom"><p>&copy; 2026 Ethio APK Hub</p></div>
-    </footer>
+<div class="header-search">
+    <input type="text" id="dl-page-search" placeholder="Search apps...">
+    <button type="button" class="search-submit-btn" onclick="executeSearch()" style="position: absolute; right: 5px; background: #ff7e00; color: white; border: none; width: 34px; height: 34px; border-radius: 50%; cursor: pointer;">
+        <i class="fa fa-search"></i>
+    </button>
+</div>
 
     <script>
         const params = new URLSearchParams(window.location.search);
-        const appName = params.get('name');
+        const name = params.get('name');
 
-        fetch('apps.json').then(res => res.json()).then(data => {
-            const app = data.find(a => a.name === appName);
-            if (app) {
-                document.getElementById('app-details').innerHTML = `
-                    <div class="app-main-header">
-                        <div class="app-main-icon-box"><img src="${app.icon_url}" class="main-app-img"></div>
-                        <div class="app-main-info">
-                            <h1>${app.name}</h1>
-                            <p class="developer-name">${app.category}</p>
-                            <div class="stars"><i class="fa fa-star"></i> 4.9 (Verified)</div>
+        fetch('apps.json').then(r => r.json()).then(data => {
+            const app = data.find(a => a.name === name);
+            if(app) {
+                document.getElementById('app-content').innerHTML = `
+                    <div class="left-col">
+                        <div style="display:flex; gap:25px; align-items:center;">
+                            <img src="${app.icon_url}" style="width:110px; height:110px; border-radius:22px;">
+                            <div>
+                                <h1 style="margin:0">${app.name}</h1>
+                                <p style="color:#ff7e00; font-weight:bold;">${app.developer || 'Verified Dev'}</p>
+                                <div style="color:#ffc107"><i class="fa fa-star"></i> 4.8</div>
+                            </div>
+                        </div>
+                        <div style="margin-top:40px;">
+                            <h3>About this app</h3>
+                            <p>${app.description}</p>
                         </div>
                     </div>
-                    
-                    <div class="download-buttons">
-                        <a href="${app.download_url}" class="btn-direct">
-                            <i class="fa fa-download"></i> Direct Download APK
-                        </a>
+                    <div class="right-col">
+                        <a href="${app.download_url}" style="display:block; background:#ff7e00; color:white; text-align:center; padding:15px; border-radius:10px; text-decoration:none; font-weight:bold; font-size:1.1rem;">Download APK</a>
+                        
                         <a href="${app.playstore_url || '#'}" class="btn-playstore">
-                            <i class="fab fa-google-play"></i> Get it on Play Store
+                            <i class="fab fa-google-play"></i> Get it on Google Play
                         </a>
-                    </div>
 
-                    <div class="description-box">
-                        <h2>Description</h2>
-                        <p>${app.description || 'Verified fast download.'}</p>
-                    </div>
-                `;
+                        <div class="info-card" style="margin-top:20px;">
+                            <div class="info-row"><span>Size</span><strong>${app.size || 'Varies'}</strong></div>
+                            <div class="info-row"><span>Downloads</span><strong>${app.downloads || '10K+'}</strong></div>
+                            <div class="info-row"><span>Version</span><strong>${app.version || 'Latest'}</strong></div>
+                        </div>
+                    </div>`;
+
+                // Load Related
+                const related = data.filter(a => a.category === app.category && a.name !== app.name).slice(0, 6);
+                const relBox = document.getElementById('related-apps');
+                related.forEach(r => {
+                    relBox.innerHTML += `
+                        <a href="download.html?name=${encodeURIComponent(r.name)}" class="card">
+                            <div class="card-icon-wrapper"><img src="${r.icon_url}" class="app-icon"></div>
+                            <p class="app-name">${r.name}</p>
+                            <span class="btn-details">Details</span>
+                        </a>`;
+                });
+            }
+        });
+
+        // Search logic to redirect back to homepage
+        document.getElementById('dl-page-search').addEventListener('keypress', (e) => {
+            if(e.key === 'Enter') {
+                window.location.href = `index.html?search=${encodeURIComponent(e.target.value)}`;
             }
         });
     </script>
     <script>
-    const dlSearch = document.getElementById('dl-page-search');
-    if(dlSearch) {
-        dlSearch.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                // Redirect back to home with the search term
-                window.location.href = `index.html?search=${encodeURIComponent(dlSearch.value)}`;
-            }
-        });
+    // Function to handle the search action
+function executeSearch() {
+    const query = document.getElementById('dl-page-search').value;
+    if (query.trim() !== "") {
+        // Redirects to index.html with the search query in the URL
+        window.location.href = `index.html?search=${encodeURIComponent(query)}`;
     }
-</script>
+}
 
+// Allow pressing "Enter" key to search as well
+document.getElementById('dl-page-search').addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        executeSearch();
+    }
+});
+</script>
 </body>
 </html>
