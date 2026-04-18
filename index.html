@@ -3,86 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ethio Apk Hub | Ethiopian Android Apps</title>
+    <title>Ethio APK Hub | Home</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header class="main-header">
-        <div class="container header-flex">
-            <div class="logo">
-                <i class="fa-solid fa-cloud-arrow-down"></i> Ethio<span>APK</span>
-            </div>
-            <nav class="top-nav">
-                <ul>
-                    <li><a href="#" class="active">Discover</a></li>
-                    <li><a href="#">Games</a></li>
-                    <li><a href="#">Apps</a></li>
-                    <li><a href="#">Topics</a></li>
-                </ul>
-            </nav>
-            <div class="header-search">
-                <input type="text" id="search" placeholder="Search for apps...">
-                <button><i class="fa fa-search"></i></button>
+
+    <nav class="navbar">
+        <div class="container nav-content">
+            <div class="logo">Ethio<span>APK</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Games</a></li>
+                <li><a href="#">Apps</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1>Find Your Favorite Apps</h1>
+            <p>The safest alternative store for Ethiopia</p>
+            <div class="hero-search">
+                <input type="text" id="search" placeholder="Search for an app (e.g. CBE Birr)...">
+                <i class="fa fa-search"></i>
             </div>
         </div>
     </header>
 
-    <div class="container main-layout">
-        <aside class="sidebar">
-            <section class="widget">
-                <h3><i class="fa fa-list"></i> Categories</h3>
-                <ul>
-                    <li><a href="#"><i class="fa fa-gamepad"></i> Action Games</a></li>
-                    <li><a href="#"><i class="fa fa-shield-halved"></i> Security</a></li>
-                    <li><a href="#"><i class="fa fa-comments"></i> Social</a></li>
-                    <li><a href="#"><i class="fa fa-briefcase"></i> Tools</a></li>
-                </ul>
-            </section>
-        </aside>
-
-        <main class="content-area">
-            <section class="banner">
-                <div class="banner-text">
-                    <h2>Safe & Fast Downloads</h2>
-                    <p>Find the latest Ethiopia-ready APKs here.</p>
-                </div>
-            </section>
-
-            <div class="section-title">
-                <h2>New Releases</h2>
-                <a href="#">View More ></a>
-            </div>
-
-            <div id="app-container" class="grid-container">
-                </div>
-        </main>
-    </div>
-
-    <footer class="main-footer">
-        <div class="container footer-grid">
-            <div class="footer-col">
-                <h4>About Us</h4>
-                <p>Ethiopia's leading alternative app store.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Support</h4>
-                <ul>
-                    <li><a href="#">Submit APK</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">DMCA</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Connect</h4>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-telegram"></i></a>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                </div>
-            </div>
+    <main class="container">
+        <div class="section-title">
+            <h2>Latest Uploads</h2>
         </div>
-        <p class="copyright">&copy; 2026 Ethio APK Hub. All rights reserved.</p>
-    </footer>
+        <div id="app-container" class="grid-container"></div>
+    </main>
 
     <script src="script.js"></script>
 </body>
