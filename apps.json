@@ -1,74 +1,30 @@
 [
-   {
-      "name":"CBE Birr",
-      "category":"Finance",
-      "size":"24MB",
-      "version":"1.4.2",
-      "icon_url":"https://yasing.com.et/EthioApk%20icon.jpg",
-      "download_url":"#",
-      "description":"The official mobile banking app for Ethiopia's largest bank."
-   },
-   {
-      "name":"CBE Birr",
-      "category":"Finance",
-      "size":"24MB",
-      "version":"1.4.2",
-      "icon_url":"https://yasing.com.et/EthioApk%20icon.jpg",
-      "download_url":"#",
-      "description":"The official mobile banking app for Ethiopia's largest bank."
-   },
-   {
-      "name":"CBE Birr",
-      "category":"Finance",
-      "size":"90MB",
-      "version":"1.4.2",
-      "icon_url":"https://yasing.com.et/EthioApk%20icon.jpg",
-      "download_url":"#",
-      "description":"The official mobile banking app for Ethiopia's largest bank."
-   },
-   {
-      "name":"MPESSA",
-      "category":"Telecom",
-      "size":"24MB",
-      "version":"1.4.2",
-      "icon_url":"https://yasing.com.et/EthioApk%20icon.jpg",
-      "download_url":"#",
-      "description":"The official mobile banking app for Ethiopia's largest bank."
-   },
-   {
-      "name":"Ebirr",
-      "category":"Finance",
-      "size":"24MB",
-      "version":"1.4.2",
-      "icon_url":"https://yasing.com.et/EthioApk%20icon.jpg",
-      "download_url":"#",
-      "description":"The official mobile banking app for Ethiopia's largest bank."
-   },
-   {
-      "name":"Chrom",
-      "category":"Browser",
-      "size":"20MB",
-      "version":"1.4.2",
-      "icon_url":"https://yasing.com.et/EthioApk%20icon.jpg",
-      "download_url":"#",
-      "description":"The official mobile banking app for Ethiopia's largest bank."
-   },
-   {
-      "name":"APOLO",
-      "category":"Finance",
-      "size":"54MB",
-      "version":"1.4.2",
-      "icon_url":"https://yasing.com.et/EthioApk%20icon.jpg",
-      "download_url":"#",
-      "description":"The official mobile banking app for Ethiopia's largest bank."
-   },
-   {
-      "name":"Awash birr",
-      "category":"Finance",
-      "size":"24MB",
-      "version":"1.4.2",
-      "icon_url":"https://yasing.com.et/EthioApk%20icon.jpg",
-      "download_url":"#",
-      "description":"The official mobile banking app for Ethiopia's largest bank."
-   }
+{
+  "name": "FACEBOOK",
+  "category": "SOCIAL",
+  "size": "24MB",
+  "icon_url": "https://yasing.com.et/EthioApk%20icon.jpg",
+  "download_url": "YOUR_DIRECT_APK_LINK",
+  "playstore_url": "https://play.google.com/store/apps/details?id=prod.cbe.birr",
+  "description": "The official mobile banking app for CBE."
+},
+{
+  "name": "INSTAGRAM",
+  "category": "SOCIAL",
+  "size": "24MB",
+  "icon_url": "https://yasing.com.et/EthioApk%20icon.jpg",
+  "download_url": "YOUR_DIRECT_APK_LINK",
+  "playstore_url": "https://play.google.com/store/apps/details?id=prod.cbe.birr",
+  "description": "The official mobile banking app for CBE."
+},
+
+{
+  "name": "FACEBOOK",
+  "category": "SOCIAL",
+  "size": "24MB",
+  "icon_url": "https://yasing.com.et/EthioApk%20icon.jpg",
+  "download_url": "YOUR_DIRECT_APK_LINK",
+  "playstore_url": "https://play.google.com/store/apps/details?id=prod.cbe.birr",
+  "description": "The official mobile banking app for CBE."
+}
 ]
