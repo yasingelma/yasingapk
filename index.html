@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ethio APK Hub | Safe & Fast Downloads</title>
+    <title>Ethio APK Hub</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -11,107 +11,62 @@
 
     <nav class="navbar">
         <div class="container nav-content">
-            <div class="logo" onclick="window.location.href='index.html'">Ethio<span>APK</span></div>
+            <div class="logo">Ethio<span>APK</span></div>
             <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="#apps">Games</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="#apps">Apps</a></li>
             </ul>
         </div>
     </nav>
 
     <header class="hero">
-        <div class="hero-overlay"></div>
         <div class="container hero-content">
             <h1>Ethio APK Hub</h1>
-            <p>Ethiopia's most trusted source for verified Android apps.</p>
+            <p>Verified Android apps for Ethiopia.</p>
             <div class="hero-search">
-                <input type="text" id="search" placeholder="Search for apps (e.g. CBE Birr)...">
+                <input type="text" id="search" placeholder="Search apps...">
                 <i class="fa fa-search"></i>
             </div>
         </div>
     </header>
 
     <main class="container" id="apps">
-        <div class="section-title">
-            <h2>Trending Applications</h2>
-        </div>
-        <div id="app-container" class="grid-container">
-            </div>
+        <div class="section-title"><h2>Trending Applications</h2></div>
+        <div id="app-container" class="grid-container"></div>
     </main>
 
-    <footer class="main-footer" id="footer">
-        <div class="container footer-grid">
-            <div class="footer-col">
-                <h4>Ethio APK Hub</h4>
-                <p>Safe, secure, and localized Android content for Ethiopia.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Links</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#apps">Latest Releases</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Ethio APK Hub. Powered by yasing.com.et</p>
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2026 Ethio APK Hub</p>
         </div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const appContainer = document.getElementById('app-container');
-            const searchInput = document.getElementById('search');
-            let allApps = [];
-
-            // Loading apps from your local apps.json
+            const container = document.getElementById('app-container');
             fetch('apps.json')
                 .then(res => res.json())
-                .then(data => {
-                    allApps = data;
-                    displayApps(allApps);
-                })
-                .catch(err => {
-                    console.error("Error:", err);
-                    appContainer.innerHTML = '<p>Error loading apps.</p>';
+                .then(apps => {
+                    apps.forEach(app => {
+                        const slug = encodeURIComponent(app.name);
+                        container.innerHTML += `
+                            <div class="card">
+                                <span class="badge-new">NEW</span>
+                                <a href="download.html?name=${slug}" style="text-decoration:none; color:inherit;">
+                                    <div class="card-icon-wrapper">
+                                        <img src="${app.icon_url}" class="app-icon">
+                                    </div>
+                                    <h3 class="app-name">${app.name}</h3>
+                                    <div class="card-meta">
+                                        <span><i class="fa fa-star" style="color:#ffc107"></i> 4.8</span>
+                                        <span>${app.size || '24MB'}</span>
+                                    </div>
+                                    <span class="btn-dl">Details</span>
+                                </a>
+                            </div>
+                        `;
+                    });
                 });
-
-            function displayApps(apps) {
-                appContainer.innerHTML = '';
-                apps.forEach(app => {
-                    // Create URL slug based on name
-                    const appSlug = encodeURIComponent(app.name.trim());
-                    const card = `
-                        <div class="card">
-                            <span class="badge-new">NEW</span>
-                            <a href="download.html?name=${appSlug}" style="text-decoration:none; color:inherit;">
-                                <div class="card-icon-wrapper">
-                                    <img src="${app.icon_url}" class="app-icon" alt="${app.name}">
-                                </div>
-                                <h3 class="app-name">${app.name}</h3>
-                                <div class="card-meta">
-                                    <span class="card-rating"><i class="fa fa-star"></i> 4.8</span>
-                                    <span class="card-size">${app.size || 'Varies'}</span>
-                                </div>
-                                <span class="btn-dl">Details</span>
-                            </a>
-                        </div>
-                    `;
-                    appContainer.innerHTML += card;
-                });
-            }
-
-            // Hero Search Filter
-            searchInput.addEventListener('input', (e) => {
-                const term = e.target.value.toLowerCase();
-                const filtered = allApps.filter(app => 
-                    app.name.toLowerCase().includes(term) || 
-                    app.category.toLowerCase().includes(term)
-                );
-                displayApps(filtered);
-            });
         });
     </script>
 </body>
