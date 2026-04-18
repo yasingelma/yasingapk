@@ -1,20 +1,20 @@
 [
-    {
-        "name": "CBE Birr",
-        "category": "Finance",
-        "icon_url": "https://via.placeholder.com/72?text=CBE",
-        "download_url": "#"
-    },
-    {
-        "name": "Telebirr",
-        "category": "Finance",
-        "icon_url": "https://via.placeholder.com/72?text=Tele",
-        "download_url": "#"
-    },
-    {
-        "name": "TikTok",
-        "category": "Social",
-        "icon_url": "https://via.placeholder.com/72?text=TikTok",
-        "download_url": "#"
-    }
+   {
+      "name":"CBE Birr",
+      "category":"Finance",
+      "icon_url":"https://via.placeholder.com/72?text=CBE",
+      "download_url":"#"
+   },
+   {
+      "name":"Telebirr",
+      "category":"Finance",
+      "icon_url":"https://via.placeholder.com/72?text=Tele",
+      "download_url":"#"
+   },
+   {
+      "name":"TikTok",
+      "category":"Social",
+      "icon_url":"https://via.placeholder.com/72?text=TikTok",
+      "download_url":"#"
+   }
 ]
