@@ -3,83 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download - Ethio APK</title>
+    <title>Download App</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="bg-light">
+<body class="body">
 
     <nav class="navbar">
         <div class="container nav-content">
-            <div class="logo" onclick="window.location.href='index.html'">Ethio<span>APK</span></div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#apps">Apps</a></li>
-            </ul>
+            <div class="logo-area" onclick="window.location.href='index.html'">
+                <img src="https://yasing.com.et/EthioApk%20icon.jpg" alt="Logo" class="site-logo">
+                <div class="logo">Ethio<span>APK</span></div>
+            </div>
+            <div class="header-search-small">
+                <input type="text" id="dl-page-search" placeholder="Search...">
+            </div>
         </div>
     </nav>
 
     <main class="container page-wrapper">
-        <div id="app-details">
+        <div id="app-details" class="dl-layout">
             </div>
+
+        <div class="ad-banner-square">
+            <p>ADVERTISEMENT</p>
+            <div class="ad-placeholder-sq">Ad Banner</div>
+        </div>
     </main>
 
     <footer class="main-footer">
         <div class="container footer-grid">
             <div class="footer-col">
-                <h4>Ethio APK Hub</h4>
-                <p>Safe and verified Android apps for Ethiopia.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Ethio APK Hub</p>
-        </div>
+        <div class="footer-bottom"><p>&copy; 2026 Ethio APK Hub</p></div>
     </footer>
 
     <script>
         const params = new URLSearchParams(window.location.search);
         const appName = params.get('name');
 
-        fetch('apps.json')
-            .then(res => res.json())
-            .then(data => {
-                const app = data.find(a => a.name === appName);
-                if (app) {
-                    document.getElementById('app-details').innerHTML = `
-                        <div class="app-main-header">
-                            <div class="app-main-icon-box">
-                                <img src="${app.icon_url}" class="main-app-img">
-                            </div>
-                            <div class="app-main-info">
-                                <h1>${app.name}</h1>
-                                <p class="developer-name">Official ${app.category} App</p>
-                                <div class="rating-row">
-                                    <span class="stars"><i class="fa fa-star"></i> 4.9</span>
-                                    <span class="reviews">1,200+ Reviews</span>
-                                </div>
-                            </div>
+        fetch('apps.json').then(res => res.json()).then(data => {
+            const app = data.find(a => a.name === appName);
+            if (app) {
+                document.getElementById('app-details').innerHTML = `
+                    <div class="app-main-header">
+                        <div class="app-main-icon-box"><img src="${app.icon_url}" class="main-app-img"></div>
+                        <div class="app-main-info">
+                            <h1>${app.name}</h1>
+                            <p class="developer-name">${app.category}</p>
+                            <div class="stars"><i class="fa fa-star"></i> 4.9 (Verified)</div>
                         </div>
+                    </div>
+                    
+                    <div class="download-buttons">
+                        <a href="${app.download_url}" class="btn-direct">
+                            <i class="fa fa-download"></i> Direct Download APK
+                        </a>
+                        <a href="${app.playstore_url || '#'}" class="btn-playstore">
+                            <i class="fab fa-google-play"></i> Get it on Play Store
+                        </a>
+                    </div>
 
-                        <div class="download-section">
-                            <a href="${app.download_url}" class="main-download-btn">
-                                <i class="fa fa-download"></i> Download APK <span>(${app.size || 'Unknown Size'})</span>
-                            </a>
-                        </div>
-
-                        <div class="specs-grid">
-                            <div class="spec-item"><strong>Latest Version:</strong> ${app.version}</div>
-                            <div class="spec-item"><strong>Publish Date:</strong> 2026-04-18</div>
-                            <div class="spec-item"><strong>Requirements:</strong> Android 5.0+</div>
-                            <div class="spec-item"><strong>Category:</strong> ${app.category}</div>
-                        </div>
-
-                        <div class="description-box">
-                            <h2>About ${app.name}</h2>
-                            <p>${app.description}</p>
-                        </div>
-                    `;
-                }
-            });
+                    <div class="description-box">
+                        <h2>Description</h2>
+                        <p>${app.description || 'Verified fast download.'}</p>
+                    </div>
+                `;
+            }
+        });
     </script>
+    <script>
+    const dlSearch = document.getElementById('dl-page-search');
+    if(dlSearch) {
+        dlSearch.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                // Redirect back to home with the search term
+                window.location.href = `index.html?search=${encodeURIComponent(dlSearch.value)}`;
+            }
+        });
+    }
+</script>
+
 </body>
 </html>
