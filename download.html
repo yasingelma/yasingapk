@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download App - Ethio APK</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container"><div class="logo">Ethio<span>APK</span></div></div>
+    </nav>
+
+    <div class="container download-page">
+        <div id="app-details" class="app-info-card">
+            <p>Loading app details...</p>
+        </div>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const appId = params.get('id');
+
+        fetch('apps.json')
+            .then(res => res.json())
+            .then(data => {
+                const app = data.find(a => a.id == appId);
+                if (app) {
+                    document.title = `Download ${app.name} - Ethio APK`;
+                    document.getElementById('app-details').innerHTML = `
+                        <div class="detail-header">
+                            <img src="${app.icon_url}" class="detail-icon">
+                            <div class="detail-text">
+                                <h1>${app.name}</h1>
+                                <p class="category">${app.category}</p>
+                                <div class="rating">
+                                    <i class="fa fa-star"></i> 4.8 | <span>Verified Safe</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="description">
+                            <h3>About this app</h3>
+                            <p>${app.description || 'No description available for this version.'}</p>
+                        </div>
+                        <a href="${app.download_url}" class="download-btn-large">
+                            <i class="fa fa-download"></i> Download APK (v${app.version})
+                        </a>
+                    `;
+                }
+            });
+    </script>
+</body>
+</html>
