@@ -1,0 +1,133 @@
+:root {
+    --primary: #ff7e00;
+    --dark: #111111;
+    --border: #e0e0e0;
+    --bg: #f8f9fa;
+}
+
+.body { margin: 0; font-family: 'Open Sans', sans-serif; background: var(--bg); color: #333; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 15px; }
+
+/* Navbar & Search */
+.navbar { background: #fff; border-bottom: 1px solid var(--border); padding: 12px 0; position: sticky; top: 0; z-index: 1000; }
+.nav-content { display: flex; justify-content: space-between; align-items: center; }
+.logo-area { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.site-logo { width: 32px; height: 32px; border-radius: 6px; }
+.logo-text { font-weight: 800; font-size: 1.3rem; color: var(--dark); text-decoration: none; }
+.logo-text span { color: var(--primary); }
+
+/* Top Search (Download Page) */
+/* Container for the search bar */
+.header-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* The input field */
+/* Header Search Fix */
+/* Container for the search bar */
+.header-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* The input field */
+.header-search input {
+    width: 100%;
+    padding: 10px 45px 10px 15px; /* Extra padding on right for the button */
+    border-radius: 25px;
+    border: 1px solid #ddd;
+    background: #f1f1f1;
+    outline: none;
+    font-size: 0.9rem;
+}
+
+/* The actual Search Button (Icon) */
+.search-submit-btn {
+    position: absolute;
+    right: 5px;
+    background: var(--primary); /* Your Aptoide Orange */
+    color: white;
+    border: none;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.search-submit-btn:hover {
+    background: #e67200;
+    transform: scale(1.05);
+}
+
+/* Play Store Button */
+.btn-playstore {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #000;
+    color: #fff;
+    padding: 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 10px;
+    border: 1px solid #333;
+}
+.btn-playstore:hover { background: #222; }
+
+/* Homepage Hero */
+.hero { background: var(--dark); padding: 60px 0; text-align: center; color: #fff; }
+.hero h1 { margin: 0 0 20px; font-size: 2.2rem; }
+.hero-search-container { max-width: 550px; margin: 0 auto; position: relative; }
+.hero-search-container input { 
+    width: 80%; padding: 15px 25px; border-radius: 30px; border: none; font-size: 1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Category Sections */
+.category-section { margin-top: 40px; }
+.section-title { border-left: 5px solid var(--primary); padding-left: 15px; margin-bottom: 20px; font-size: 1.4rem; }
+.grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 20px; }
+
+/* Cards */
+.card { background: #fff; border: 1px solid var(--border); padding: 15px; border-radius: 12px; text-align: center; transition: 0.3s; text-decoration: none; color: inherit; display: block; }
+.card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
+.card-icon-wrapper { width: 75px; height: 75px; margin: 0 auto 12px; }
+.app-icon { width: 100%; height: 100%; border-radius: 18px; object-fit: cover; }
+.app-name { font-weight: 700; font-size: 0.9rem; margin: 0 0 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.star-rating { color: #ffc107; font-size: 0.7rem; margin-bottom: 10px; }
+.btn-details { display: block; background: #f8f9fa; border: 1px solid #ddd; padding: 6px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; }
+
+/* Download Page Layout */
+.app-detail-grid { display: grid; grid-template-columns: 1fr 320px; gap: 40px; margin-top: 30px; }
+.info-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 25px; }
+.info-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #eee; font-size: 0.9rem; }
+
+/* Footer */
+.main-footer { background: var(--dark); color: #888; padding: 60px 0 20px; margin-top: 80px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+.footer-col h4 { color: #fff; margin-bottom: 20px; }
+.footer-links { list-style: none; padding: 0; margin: 0; }
+.footer-links li { margin-bottom: 10px; }
+.footer-links a { color: #888; text-decoration: none; }
+.footer-links a:hover { color: var(--primary); }
+.social-group { display: flex; gap: 15px; margin-top: 20px; }
+.social-group a { color: #fff; font-size: 1.5rem; transition: 0.3s; }
+.social-group a:hover { color: var(--primary); }
+
+@media (max-width: 800px) {
+    .app-detail-grid, .footer-grid { grid-template-columns: 1fr; }
+    .header-search { display: none; }
+}
