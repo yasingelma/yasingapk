@@ -1,33 +1,32 @@
 [
    {
-      "name":"Telebirr",
-      "category":"Finance",
-      "icon_url":"https://github.com/yasingelma/yasingapk/blob/main/EthioApk%20icon.jpg",
-      "download_url":"#"
-   },
-   {
-      "name":"TikTok",
-      "category":"Social",
-      "icon_url":"https://github.com/yasingelma/yasingapk/blob/main/EthioApk%20icon.jpg",
-      "download_url":"#"
-   }
-
- {
       "name":"CBE Birr",
       "category":"Finance",
-      "icon_url":"https://github.com/yasingelma/yasingapk/blob/main/EthioApk%20icon.jpg",
+      "icon_url":"https://via.placeholder.com/72?text=CBE",
       "download_url":"#"
    },
    {
       "name":"Telebirr",
       "category":"Finance",
-      "icon_url":"https://github.com/yasingelma/yasingapk/blob/main/EthioApk%20icon.jpg",
+      "icon_url":"https://yasing.com.et/EthioApk%20icon.jpg",
       "download_url":"#"
    },
    {
-      "name":"TikTok",
+      "name":"Instagram",
       "category":"Social",
-      "icon_url":"https://github.com/yasingelma/yasingapk/blob/main/EthioApk%20icon.jpg",
+      "icon_url":"https://yasing.com.et/EthioApk%20icon.jpg",
+      "download_url":"#"
+   },
+   {
+      "name":"SnapChat",
+      "category":"Social",
+      "icon_url":"https://yasing.com.et/EthioApk%20icon.jpg",
+      "download_url":"#"
+   },
+   {
+      "name":"Facebook",
+      "category":"Social",
+      "icon_url":"https://yasing.com.et/EthioApk%20icon.jpg",
       "download_url":"#"
    }
 ]
