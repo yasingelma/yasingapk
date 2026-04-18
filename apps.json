@@ -1,0 +1,42 @@
+[
+    {
+        "name": "CBE Birr",
+        "category": "Finance",
+        "icon_url": "cbe-logo.png",
+        "download_url": "https://yasing.com.et/files/cbe.apk"
+    },
+    {
+        "name": "PUBG Mobile",
+        "category": "Games",
+        "icon_url": "pubg-icon.jpg",
+        "download_url": "https://yasing.com.et/files/pubg.apk"
+    }
+]
+[
+    {
+        "name": "CBE Birr",
+        "category": "Finance",
+        "icon_url": "https://github.com/yasingelma/yasingapk/blob/main/EthioApk icon.jpg",
+        "download_url": "https://yasing.com.et/files/cbe.apk"
+    },
+    {
+        "name": "PUBG Mobile",
+        "category": "Games",
+        "icon_url": "https://github.com/yasingelma/yasingapk/blob/main/EthioApk icon.jpg",
+        "download_url": "https://yasing.com.et/files/pubg.apk"
+    }
+]
+[
+    {
+        "name": "CBE Birr",
+        "category": "Finance",
+        "icon_url": "https://github.com/yasingelma/yasingapk/blob/main/EthioApk icon.jpg",
+        "download_url": "https://yasing.com.et/files/cbe.apk"
+    },
+    {
+        "name": "PUBG Mobile",
+        "category": "Games",
+        "icon_url": "https://github.com/yasingelma/yasingapk/blob/main/EthioApk icon.jpg",
+        "download_url": "https://yasing.com.et/files/pubg.apk"
+    }
+]
